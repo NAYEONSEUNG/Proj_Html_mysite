@@ -23,14 +23,14 @@
 		.side_wrap{
 			border: 1px solid red;
 			width: 450px;
-			height: 1000px;
+			/*height: 1000px;*/
 			margin-right: 25px;
 		}
 		.side_picture{
 			background-image: url("../img/미니언즈_1.jpg");
 			background-repeat: no-repeat;
-			height: 300px;
-			position: center center;
+			height: 293px;
+			background-position: center center;
 			width: 100%;
 			
 		}
@@ -56,7 +56,7 @@
 			display: flex;
 			flex-direction: column;
 			justify-content: space-between;
-			height: 120px;
+			height: 165px;
 			/*height: 50px;*/ /*이거 주석처리하면 자동으로 내용물 만큼 커지고 작아지고 한다.*/
 		}
 		.side_personal_group{	
@@ -72,9 +72,9 @@
 			padding: 15px 0;
 			/*height: 100px;*/
 		}
-		.nav{
-			margin-top: 25px;
-			padding: 15px;
+		.common_panel{
+			margin-bottom: 25px;
+			/*padding: 15px;*/
 		}
 
         .menu_title{
@@ -96,7 +96,39 @@
 		.content_wrap{
 			border: 1px solid blue;
 			width: 850px;
-			height: 1000px;
+		/*	height: 1000px;*/
+		}
+		.content_padding{
+			padding: 15px;
+		}
+		.bar_wrap{
+			margin-bottom: 20px;			
+		}
+		.bar_border{
+			margin-top: 8px;
+			width:815px;
+			height: 25px;
+			background-color: #f1f1f1;
+			border: 1px solid #03a6ff;
+			overflow: hidden;
+			border-radius: 16px;
+		}
+		.bar_fill{
+			width: 0;
+			height: 25px;
+			background-color: #03a6ff;
+			border-radius: 16px;
+			padding: 0 15px;
+			text-align: center;
+			line-height: 25px;
+			font-weight: bold;
+			font-size: 13px;
+		}
+		.skill_title{
+			padding: 0px 0px 8px 8px;
+		}
+		.content_padding > .bar_wrap:last-child{
+			margin: 0;
 		}
 
 
@@ -107,16 +139,144 @@
 			justify-content: center;
 			align-items: center; /*한건일때만 가운데 정렬이 된다. */
 		}
+		.content_padding > table {
+			width: 100%;
+			border-collapse: collapse;
+		}
+		table,th,td{
+			border: 1px solid #2f3138;
+			
+		}
+		th,td{
+			padding: 5px;
+		}
+		th{background-color:#03a6ff; color: white; }
+		.edu_table tr:nth-child(even){/*짝수번에 색깔들어감*/
+			background-color: #f1f1f1;
+		}
+		.edu_table tr td:first-child, .edu_table tr td:last-child  {
+			text-align: center;
+		}
+		.edu_table tr:hover{
+			background-color: #ccc;
+		}
+		.download_wrap{
+			width: 100%;
+			display:flex;
+			justify-content: space-around;
+			align-items: center;
+			padding: 25px;
+		}
+		.download_wrap div a{
+			padding: 8px 20px;
+			color: white;
+			border-radius: 5px;
+			background-color: #a6664b;
+		}
+		.download_wrap div a:hover{
+			box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
+		}
+		.fix_btn{
+			position: fixed;
+			right: 50px;			
+			color: white;
+			height: 70px;
+			width: 70px;			
+			border-radius:50%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-size: 25px;
+			cursor: pointer;
+			box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
+		}
+		.fix_btn > i {
+			transition: transform .3s;			
+		}
+		.fix_btn:hover > i{
+			transform: scale(3);
+		} 
+		.conn_btn{
+			bottom: 30px;
+			background-color: #c03546;
 
+		}
+		.top_btn{
+			bottom: 115px;
+			background-color: #414d41;
+		}
+		.msg_wrap{
+			position: absolute;
+			bottom: 0;
+			right: 90px;
+			background-color: white;
+			/*padding: 15px;*/
+			border-radius: 5px;
+			border: 1px solid #2f3138;
+			box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
 
+		}
+		.note_wrap{
+			padding: 15px;
+			color: #2f3138;
+			font-size: 15px;
+			width: 340px;
+
+		}
+		.send_info{
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+		.send_info > input{
+			width: 150px;
+		}
+		.note_wrap > div{
+			margin-bottom:8px;
+		}
 		
 	</style>
 </head>
 
 
-	
-</head>
 <body>
+	<div class="top_btn fix_btn"><i class="fas fa-arrow-alt-circle-up"></i></div>
+	<div class="conn_btn fix_btn">
+		<div class="msg_wrap">
+
+			<div class="menu_title">
+				<i class="fas fa-envelope"></i>
+				<span>Message</span>
+			</div>
+		<div class="note_wrap">
+				<div class="conn_note">Please contact me if you are interested</div>
+
+
+				<div class="send_info">
+					<input type="text" placeholder="Name">
+					<input type="text" placeholder="Email">
+				</div>
+				<div class="send_msg">
+					<input type="text" placeholder="Message">
+				</div>
+				<div class="send_btn">
+					<a href="#"><i class="fas fa-rocket"></i>SEND MESSAGE</a>
+				</div>
+
+				<!-- <div>
+					<input type="text" placeholder="Message">
+				</div>
+				<div>
+					<a href="#"><i class="fas fa-rocket"></i>SEND MESSAGE</a>
+				</div> -->
+			</div>
+
+		</div>
+		<i class="fas fa-envelope"></i>
+	</div>
+
+
+
 	<div class="wrap">
 		<aside>
 			<div class="side_wrap">
@@ -132,6 +292,7 @@
 				   <div class="side_personal_group">
 				 	  <div class="side_personal">
 				 	  	   <div><i class="fas fa-briefcase"></i>Web Programmer</div>
+				 	  	   <div><i class="fas fa-graduation-cap"></i>Bachelor of Trade</div>
 				 	  	   <div><i class="fas fa-home"></i>Gwang-Ju, Korea rep</div>
 				 	  	   <div><i class="fas fa-envelope"></i>blackpulv@hanmail.net</div>
 				 	  	   <div><i class="fas fa-mobile"></i>010-3791-5216</div>
@@ -162,25 +323,175 @@
 				   	  </div>
 				   </div>
 				   <div class="common_panel layer nav">
-				   	<div class="menu_title"
+				   	<div class="menu_title">
 				   	<span><i class="fas fa-bars"></i>Menu</span>
 				   
 				   </div>
 				   		<ul>
 							<li><a href="#">Tech Skills</a></li>
 							<li><a href="#">Education</a></li>
-							<li><a href="#">License</a></li>
-							<li><a href="#">Contact</a></li>
+							<li><a href="#">License</a></li>							
 						</ul>
+					</div>
+				<div class="common_panel layer nav">
+				   	<div class="menu_title">
+				   	  <i class="fas fa-cloud"></i>
+				      <span>Downloads</span>
+				   
+				   </div>
+				   <div class="content_padding download_wrap">
+				   		<div class="git_wrap">
+				   			
+				   			<a href="https://github.com/NAYEONSEUNG" target="_blank">
+				   				<i class="fab fa-github"></i>Github
+				   			</a>
+				   		</div>
+				   		<div class="resume_wrap">
+				   			<a href="#">
+				   				<i class="fas fa-download"></i>Resume
+				   			</a>
+				   		</div>
+				   	
+				   </div>
+				   		
+				</div>									
 
-			    </div>
-			 </div>   
+			   
 		</aside>
 		
 		<section>
-			<div class="content_wrap"></div>
+			<div class="content_wrap">
+			 <div class="common_panel layer nav">
+				   	<div class="menu_title">
+				   	<span><i class="fas fa-laptop-code"></i>TechSkills</span>
+				   
+				   </div>
+				   <div class="content_padding">
+				   		<div class="bar_wrap">
+				   			<div class="skill_title"><strong>Programing(Java,Python)</strong></div>
+				   			<div><div class="bar_border"><div class="bar_fill" >50%</div></div></div>	
+				   		</div>		
+				   							   					
+				   				
+						<div class="bar_wrap">
+				   			<div class="skill_title"><strong>DataBase&SQL(Oracle, MongoDB)</strong></div>
+				   			<div><div class="bar_border"><div class="bar_fill" >60%</div></div></div>			
+				   		</div>		
+				   								   					
+				   								   					   							   		
+				   		<div class="bar_wrap">
+				   			<div class="skill_title"><strong>Web Publishing(HTML, CSS, Javascript)</strong></div>
+				   			<div><div class="bar_border"><div class="bar_fill" >55%</div></div></div>			
+				   		</div>		
+				   									   									   				
+				   				   							   		
+				   		<div class="bar_wrap">
+				   			<div class="skill_title"><strong>Web Develop(Servlet, Spring)</strong></div>
+				   			<div><div class="bar_border"><div class="bar_fill" >60%</div></div></div>				
+				   		</div>		
+				   							   					
+				   								   					   							   		
+				   		<div class="bar_wrap">
+				   			<div class="skill_title"><strong>Version Managing Tool(GitHub)</strong></div>
+				   			<div><div class="bar_border"><div class="bar_fill" >70%</div></div></div>			
+				   		</div>		
+				   						   					
+				   								   							   							   		
+				   </div>	
+			 </div> 
+
+			 <div class="common_panel layer nav">
+				   	<div class="menu_title">
+				   		<i class="fas fa-user-edit"></i>
+				   		<span>Education</span>				   
+				   </div>
+				   <div class="content_padding">
+				   		<table class="edu_table">
+				   			<thead>
+				   				<tr><th>No</th><th>Course name</th><th>Academy</th><th>period</th></tr>
+				   			</thead>
+				   			<tbody>
+				   				<tr><td>1</td><td>프로그래밍 언어활용</td><td>한국경영원</td><td>2019.11~2020.06</td></tr>
+				   				<tr><td>2</td><td>응용SW기초기술 활용</td><td>한국경영원</td><td>2019.11~2020.06</td></tr>
+				   				<tr><td>3</td><td>데이터베이스 활용  </td><td>한국경영원</td><td>2019.11~2020.06</td></tr>
+				   				<tr><td>4</td><td>서버프로그램 구현</td><td>한국경영원</td><td>2019.11~2020.06</td></tr>
+				   				<tr><td>5</td><td>UI 구현</td><td>한국경영원</td><td>2019.11~2020.06</td></tr>
+
+				   			</tbody>
+				   		</table>
+
+				   </div>
+				   		
+			 </div>	
+
+			 			 <div class="common_panel layer nav">
+				   	<div class="menu_title">
+				   		<i class="fas fa-address-card"></i>
+				   		<span>License</span>				   
+				   </div>
+				   <div class="content_padding">
+				   		<table class="edu_table">
+				   			<thead>
+				   				<tr><th>No</th><th>License name</th><th>Institution</th><th>period</th></tr>
+				   			</thead>
+				   			<tbody>
+				   				<tr><td>1</td><td>1종보통 운전면허증</td><td>도로교통공단</td><td>20</td></tr>
+				   				<tr><td>2</td><td>사회복지사2급</td><td>보건복지부</td><td>2015.10</td></tr>
+				   				
+
+				   			</tbody>
+				   		</table>
+
+				   </div>
+				   		
+			 </div>
+
+	<!-- 		    <div class="common_panel layer nav">
+				   	<div class="menu_title">
+				   	<i class="fas fa-cloud"></i>
+				   	<span>Downloads</span>
+				   
+				   </div>
+				   <div class="content_padding">
+				   		<div>
+				   			<i class="fab fa-github"></i>
+				   			<span></span>
+				   		</div>
+				   		<div></div>
+				   	
+				   </div>
+				   		
+				</div>	 -->	
+
+			</div>			
 		</section>
 
 	</div>
-</body>
+</body> <!--바디태그안에는 html 코드만쓰지// 헤드태그안에는 style css만 쓰자.-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+/*자바스크립트, 제이쿼리, 에이젝스코드는 여기다가 쓰자*/
+	
+	/*$ = jQuery*/
+	//HTML 문서가 완료되면 동작 할 작업들
+	//Javascript에서는 함수를 만들떄 function(){}
+	//이름이 없는 함수 = 익명함수
+	$(document).ready(function() {
+		// $('.code').animate({width: '70%'},'slow');
+		// $('.db').animate({width: '60%'},'slow');
+		// $('.design').animate({width: '55%'},'slow');
+		// $('.spring').animate({width: '60%'},'slow');
+		// $('.git').animate({width: '70%'},'slow');
+
+		// 괄호안에오는건 무조건 선택자(누구한테 줄것인가) /each -자바에서 foreach
+		//this가 붙으면 나 자신, 첫번째 bar fill에가서 텍스트값을 가져와라
+		//withval은 변수 int, string등등 구별없이 무조건 var쓴다. 
+		//1000을 1초로 본다. 10초면은 10000
+		$('.bar_wrap').find('.bar_fill').each(function(){ 
+			var widthval = $(this).text();
+			$(this).animate({width: widthval}, '1000');
+		});
+
+	});
+</script>
 </html>
